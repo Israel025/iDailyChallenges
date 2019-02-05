@@ -1,7 +1,8 @@
 //function declaration
 function arraySum(array){
     if (!Array.isArray(array)){
-        throw new TypeError('Expected an array, but got ' + typeof(array) + '.');
+        console.log(TypeError('Expected an array, but got ' + typeof(array) + '.') );        
+        //throw new TypeError('Expected an array, but got ' + typeof(array) + '.');
     }
     let sum = 0;
     array.forEach((index) => {sum += parseInt(index);});
@@ -15,4 +16,4 @@ let obj = {One: 1, Two:2, Ten:10}
 let int = 20;
 
 //function call
-console.log(arraySum(sampleList));
+console.log(arraySum(str));
