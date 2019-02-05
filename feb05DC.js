@@ -16,4 +16,4 @@ let obj = {One: 1, Two:2, Ten:10}
 let int = 20;
 
 //function call
-console.log(arraySum(str));
+console.log(arraySum(sampleList));
