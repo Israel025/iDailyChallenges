@@ -46,7 +46,7 @@ function usersOver24(array){
         return 'Array Object expected';
     }
 }
-//console.log(usersOver24(texasss));
+console.log(usersOver24(texasss));
 
 //Part 2 – Find the total age of all users
 function overallAge(array){
@@ -61,7 +61,7 @@ function overallAge(array){
         return 'Array Object expected';
     }
 }
-//console.log(overallAge(texasss));
+console.log(overallAge(texasss));
 
 //Part 3 – List all female coders
 function femaleUsers(array){
@@ -75,7 +75,7 @@ function femaleUsers(array){
         return 'Array Object expected';
     }
 }
-//console.log(femaleUsers(texasss));
+console.log(femaleUsers(texasss));
 
 
 //array 2
@@ -139,7 +139,7 @@ function usersUsAsc(array){
         return 'Array Object expected';
     }
 }
-//console.log(usersUsAsc(newieyork));
+console.log(usersUsAsc(newieyork));
 
 // Part 2 – Sort all users by age
 function usersByAge(array){
@@ -155,7 +155,7 @@ function usersByAge(array){
         return 'Array Object expected';
     }
 }
-//console.log(usersByAge(newieyork));
+console.log(usersByAge(newieyork));
 
 // Part 3 -  List all female coders
 function femaleCoders(array){
@@ -169,7 +169,7 @@ function femaleCoders(array){
         return 'Array Object expected';
     }
 }
-//console.log(femaleCoders(newieyork));
+console.log(femaleCoders(newieyork));
 
 
 //array 3
@@ -225,7 +225,7 @@ function maleCodersAge(array){
         return 'Array Object expected';
     }
 }
-//console.log(maleCodersAge(vegzas));
+console.log(maleCodersAge(vegzas));
 
 // Part 2 – List all male coders over 30
 function maleCodersOver30(array){
@@ -239,6 +239,22 @@ function maleCodersOver30(array){
         return 'Array Object expected';
     }
 }
-//console.log(maleCodersOver30(vegzas));
+console.log(maleCodersOver30(vegzas));
 
 // Part 3 – Find the total age of everyone in texasss, newieyork and vegzas combined.
+function allCitiesAge(){    
+    let sumAll=0;
+    for(let i = 0; i<arguments.length; i++){
+        if (Array.isArray(arguments[i])){
+            let sum = arguments[i].map(function(eachUser){
+                if (typeof(eachUser) === "object"){
+                    return eachUser.Age;
+                }
+            }).reduce(function(age1, age2){return age1 + age2}, 0);
+            sumAll += sum;
+        }
+        else{return 'Each parameters must be an Array';}
+    }
+    return sumAll;
+}
+console.log(allCitiesAge(texasss, newieyork, vegzas));
