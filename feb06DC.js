@@ -56,7 +56,7 @@ function overallAge(array){
                 return eachUser.Age;
             }
         })
-            .reduce(function(age1, age2){return age1 + age2}, 0)
+            .reduce(function(age1, age2){return age1 + age2}, 0);
     }else{
         return 'Array Object expected';
     }
@@ -143,23 +143,33 @@ function usersUsAsc(array){
 
 // Part 2 – Sort all users by age
 function usersByAge(array){
-    if (Array.isArray(array)){
-        return array.map(function(eachUser){
-            if (typeof(eachUser) === "object"){
-                return array.sort(function(object1, object2){
-                    if (object1.Age < object2.Age){
-                        return -1;
-                    }else{
-                        return 1;
-                    }
-                });  
+    if(Array.isArray(array)){
+        return array.sort(function(object1, object2){
+            if (object1.Age < object2.Age){
+                return -1;
+            }else{
+                return 1;
             }
-        });
+        });       
     }else{
         return 'Array Object expected';
     }
 }
-console.log(usersByAge(newieyork));
+//console.log(usersByAge(newieyork));
+
+// Part 3 -  List all female coders
+function femaleCoders(array){
+    if (Array.isArray(array)){
+        return array.filter(eachObj => {
+            if (typeof(eachObj) === "object"){
+                return (eachObj.Gender === 'f' && eachObj.Coder === true);
+            }          
+        });         
+    }else{
+        return 'Array Object expected';
+    }
+}
+//console.log(femaleCoders(newieyork));
 
 
 //array 3
@@ -196,12 +206,39 @@ const vegzas = [
     },
 ];
 
+//SOLUTIONS FOR ARRAY 3
 
-
-
-function grade(myList){
-    //03- this is the map variable you created
-    const studentGrade = myList.map(function(student){
-      return student.grade;
-    });
+// Part 1 – Find the total age of male coders under 25
+function maleCodersAge(array){
+    if (Array.isArray(array)){
+        let filteredList =  array.filter(eachObj => {
+            if (typeof(eachObj) === "object"){
+                return (eachObj.Gender === 'm' && eachObj.Coder === true && eachObj.Age < 25);
+            }          
+        });
+        return filteredList.map(function(eachUser){ 
+            return eachUser.Age;           
+        })
+        .reduce(function(age1, age2){return age1 + age2}, 0);
+             
+    }else{
+        return 'Array Object expected';
+    }
 }
+//console.log(maleCodersAge(vegzas));
+
+// Part 2 – List all male coders over 30
+function maleCodersOver30(array){
+    if (Array.isArray(array)){
+        return array.filter(eachObj => {
+            if (typeof(eachObj) === "object"){
+                return eachObj.Gender === 'm' && eachObj.Coder === true && eachObj.Age > 30;
+            }          
+        });         
+    }else{
+        return 'Array Object expected';
+    }
+}
+//console.log(maleCodersOver30(vegzas));
+
+// Part 3 – Find the total age of everyone in texasss, newieyork and vegzas combined.
