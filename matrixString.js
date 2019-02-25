@@ -15,13 +15,14 @@ function VowelSquare(stringArray){
      	firstString[stringIndex+1].match(vowelRegEx)&&
      	secondString[stringIndex].match(vowelRegEx)&&
      	secondString[stringIndex+1].match(vowelRegEx)) {
-		report =`${arrayIndex} - ${stringIndex}`;break;
+		report =`${arrayIndex} - ${stringIndex}`;
+		arrayIndex = stringArray.length;
+		break;
 	} else {continue;} 
 	} 
-
 } 
 
-	 return report;
+	return report;
 }
 
 console.log(VowelSquare(strArr) );
