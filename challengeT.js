@@ -1,41 +1,15 @@
 let strArray = ["aqrst", "ukaei", "ffooo"]
 
 
-function VowelSquare(strArr) { 
-    
-
-  // code goes here  
-  return strArr; 
-         
-}
-   
-// keep this function call here 
-//VowelSquare(readline());                            
-
-let str = "oqewtyiebu";
-let strArray = ["aqrst", "ukaei", "ffooo"]
-
-// strArray.forEach(element => {
-//     console.log(element.indexOf('e')) ;
-// });
-//console.log(stage);
-
-function vowelsIndexesGetter(string) {
+function VowelSquare(stringArray) {
+    let report = "2x2 Vowels not found";
     let vowelsRegEx = /a|e|i|o|u/gi;
-    let vowelsIndexesHolder = [];
-    for (let index = 0; index < string.length; index++) {
-        string[index].match(vowelsRegEx)? vowelsIndexesHolder.push(index): false;    
+
+    for (let arrIndex = 0; arrIndex < array.length-1; arrIndex++) {
+        const element = array arrIndex];
+        
     }
-    return vowelsIndexesHolder;    
+
+   
+    return report;         
 }
-
-let comArr = strArray.map(string => vowelsIndexesGetter(string));
-
-
-console.log(comArr);
-
-//console.log(vowelsIndexesGetter(str));
-
-// array.forEach(element => {
-    
-// });
