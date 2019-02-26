@@ -6,7 +6,7 @@ function VowelSquare(stringArray) {
     let vowelsRegEx = /a|e|i|o|u/gi;
 
     for (let arrIndex = 0; arrIndex < array.length-1; arrIndex++) {
-        const element = array arrIndex];
+        const element = stringArray[arrIndex];
         
     }
 
